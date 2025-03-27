@@ -1,0 +1,26 @@
+vertice = []
+caras = []
+while True:
+  print("1. registrar vertice")
+  print("2. registrar cara")
+  print("3. salir")
+  opcion = input("elegir opcion: ")
+  
+  if opcion == "1":
+      n = int(input("ingrese numero de vertice: "))
+      for i in range(n):
+          x = float(input("vertice, (i+1) - x:" ))
+          y = float(input("vertice, (i+1) - y:" ))
+          z = float(input("vertice, (i+1) - z:" ))
+      vertice.append([x, y, z])
+
+  elif opcion == "2"
+     while True:
+         print("ingrese los indices de los vertices de la cara")
+         indice = list(map(int, input().split()))
+         valido = True
+         for w in indice:
+           if w < 0 or w >= len(vertice):
+             valido = False
+             break
+         
