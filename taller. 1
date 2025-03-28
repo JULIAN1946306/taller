@@ -4,23 +4,58 @@ while True:
   print("1. registrar vertice")
   print("2. registrar cara")
   print("3. salir")
-  opcion = input("elegir opcion: ")
-  
-  if opcion == "1":
-      n = int(input("ingrese numero de vertice: "))
-      for i in range(n):
-          x = float(input("vertice, (i+1) - x:" ))
-          y = float(input("vertice, (i+1) - y:" ))
-          z = float(input("vertice, (i+1) - z:" ))
-      vertice.append([x, y, z])
+  opcion = input("elege una opcion: ")
 
-  elif opcion == "2"
-     while True:
-         print("ingrese los indices de los vertices de la cara")
-         indice = list(map(int, input().split()))
-         valido = True
-         for w in indice:
-           if w < 0 or w >= len(vertice):
-             valido = False
-             break
-         
+  if opcion == "1":
+      print("numero de vertice: ")
+      x = float(input("x: "))
+      y = float(input("y: "))
+      z = float(input("z: "))
+      vertice.append([x,y,z])
+      print("registro",len(vertice),"exitoso", (x, y, z))
+  elif opcion == "2":
+      if len(vertice) < 3:
+          print("se necesita 3 vertices")
+
+      print("ingrese los numeros de los vertices")
+      i = 1
+      while i <= len(vertice):
+          print("{i}: {vertices[i-1]}")
+          i = i + 1
+
+      print("ingrese los vertices: ")
+      numero = input()
+      indice = []
+      for num in numero.split():
+          indice.append(int(num))
+
+      correcto = True
+      for i in indice:
+          if i < 1 or i > len(vertice):
+              correcto = False
+              break
+
+      cara = []
+      for i in indice:
+          cara.append(i-1)
+      caras.append(cara)
+      print("caras", cara)
+
+  if opcion == "3":
+      print("la figura geometrica es: ")
+      print("vertices: ")
+      i = 1
+      while i <= len(vertice):
+          print("{i}: {vertices[i-1]}")
+          i = i + 1
+            
+      
+      print("caras: ")
+      i = 1
+      while i <= len(caras):
+          vertice_cara = []
+          for l in caras[i-1]:
+              vertice_cara.append({l+1})
+          print(str(i) + ": " + str(vertice_cara))
+          i = i + 1
+          break
