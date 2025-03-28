@@ -3,7 +3,7 @@ caras = []
 while True:
   print("1. registrar vertice")
   print("2. registrar cara")
-  print("3. salir")
+  print("3. figura")
   opcion = input("elege una opcion: ")
 
   if opcion == "1":
